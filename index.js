@@ -15,7 +15,6 @@ const client = new Client({
 
 // Tokeny do bota z pliku .env
 const bot_token = process.env.DISCORD_TOKEN;
-const client_id = process.env.CLIENT_ID;
 
 // Odczytywanie komend z plików
 client.commands = new Collection();
@@ -67,6 +66,17 @@ client.on('interactionCreate', async interaction => {
     }
 });
 
+// Event po wpisaniu słowa 'król' lub tym podobne
+const king_words = ['krol', 'king', 'król', 'konrad', 'kondi', 'kondy', 'kondrad'];
+
+client.on('message', message => {
+    for (let i = 0; i < king_words.length; i++) {
+        if (message.content.includes(king_words[i]).toLowerCase()) {
+            message.channel.send({files: [{attachment: './src/king.png'}]});
+            break;
+        }
+    }
+});
 
 // Loguje bota
 client.login(bot_token);
