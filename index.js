@@ -1,4 +1,4 @@
-require('dotenv').config();
+require('dotenv/config');
 
 // Tworzenie klienta Discord.js
 const { Client, GatewayIntentBits, ActivityType, Collection } = require('discord.js');
@@ -69,9 +69,9 @@ client.on('interactionCreate', async interaction => {
 // Event po wpisaniu słowa 'król' lub tym podobne
 const king_words = ['krol', 'king', 'król', 'konrad', 'kondi', 'kondy', 'kondrad'];
 
-client.on('message', message => {
+client.on('messageCreate', message => {
     for (let i = 0; i < king_words.length; i++) {
-        if (message.content.includes(king_words[i]).toLowerCase()) {
+        if (message.content.toLowerCase().includes(king_words[i]) && !message.author.bot) {
             message.channel.send({files: [{attachment: './src/king.png'}]});
             break;
         }
