@@ -13,6 +13,9 @@ module.exports = {
 
         const memberToBan = interaction.guild.members.cache.get(userToBan.id);
 
+        if (memberToBan == "472873575154712611")
+            return await interaction.reply({content: 'Kondi jest KOKSEM! Nie mogę go zbanować!'});
+
         if (!memberToBan.bannable)
             return await interaction.reply({content: 'Nie mogę go zbanować. Za mocarny!', ephemeral: true});
 
