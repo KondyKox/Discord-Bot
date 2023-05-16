@@ -14,10 +14,10 @@ module.exports = {
 
         try {
             await userToKick.kick(reason);
-            await interaction.reply(`Użytkownik ${userToKick} został wykopany z serwera z powodu: ${reason}`);
+            await interaction.reply({content: `Użytkownik ${userToKick} został wykopany z serwera z powodu: ${reason}`, ephemeral: true});
         } catch (error) {
             console.error(error);
-            await interaction.reply(`Kurde, twardą ma dupe i nie mogę go wykopać`);
+            await interaction.reply({content: `Kurde, twardą ma dupe i nie mogę go wykopać`, ephemeral: true});
         }
     }
 }

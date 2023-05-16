@@ -41,7 +41,7 @@ client.on('guildMemberAdd', member => {
     const embed = new EmbedBuilder()
     .setTitle('Nowy debil!')
     .setDescription(`Siema **<@${member.user.id}>**, nikt cie tu nie chce!`)
-    .setColor('Aqua')
+    .setColor('Random')
     .setFooter({text: member.user.username, iconURL: member.user.avatarURL({dynamic: true})})
     .setTimestamp();
 

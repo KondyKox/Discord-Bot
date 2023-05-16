@@ -13,7 +13,7 @@
     "discord.js": "^14.11.0",
     "dotenv": "^16.0.3",
     "ffmpeg-static": "^5.1.0",
-    "openai": "^3.1.0",
+    "openai": "^3.2.1",
     "openai-nodejs": "^1.1.0"
   }
 }
