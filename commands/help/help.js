@@ -15,6 +15,7 @@ module.exports = {
         const embed = new EmbedBuilder()
             .setTitle('Oto moje komendy ziomek:')
             .setDescription(`\n\t${commands.join('\n\t')}`)
+            .setColor('Aqua')
             .setTimestamp()
 
         await interaction.reply({embeds: [embed]});
