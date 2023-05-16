@@ -9,8 +9,10 @@
   "author": "Kondi",
   "license": "ISC",
   "dependencies": {
+    "@discordjs/voice": "^0.16.0",
     "discord.js": "^14.11.0",
     "dotenv": "^16.0.3",
+    "ffmpeg-static": "^5.1.0",
     "openai": "^3.1.0",
     "openai-nodejs": "^1.1.0"
   }
