@@ -1,7 +1,7 @@
 require('dotenv/config');
 
 // Tworzenie klienta Discord.js
-const { Client, GatewayIntentBits, ActivityType, Collection } = require('discord.js');
+const { Client, GatewayIntentBits, ActivityType, Collection, EmbedBuilder } = require('discord.js');
 const fs = require('fs');
 
 const client = new Client({
@@ -45,8 +45,10 @@ client.on('guildMemberAdd', member => {
     .setFooter({text: member.user.username, iconURL: member.user.avatarURL({dynamic: true})})
     .setTimestamp();
 
-    // Wysyła wiadomość powitalną na kanał (id kanału tu jest podane)
-    member.client.channels.cache.get('1077702973649600667').send({embeds: [embed]});
+    // Wysyła wiadomość powitalną na wyznaczony na serwerze kanał
+    const systemChannel = member.guild.systemChannel;
+    if (systemChannel)
+        systemChannel.send({embeds: [embed]});
 });
 
 // Odpala komendę
